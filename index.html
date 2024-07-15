@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+  .about-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #E3C0E1;
+  }
+  .about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  .about-section img {
+    width: 200px; /* Adjust the size as needed */
+    height: 250px;
+    border-radius: 50%; /* Makes the image round */
+    margin-bottom: 20px;
+  }
+  .about-section p {
+    color: #333;
+  }
+
+  /* Additional CSS for Projects Section */
+.projects-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+.card {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Adds a subtle shadow around the card */
+}
+.card-img-top {
+  max-height: 180px; /* Adjust this value to fit the image properly in the card */
+  object-fit: cover; /* This makes sure the image covers the area properly */
+}
+.card-body {
+  padding: 15px;
+}
+.card-title {
+  font-size: 1.25rem;
+}
+.card-text {
+  margin-bottom: 15px;
+}
+
+/* Additional CSS for Skills Section */
+.skills-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+.skills-section .card {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.skills-section .card-img-top {
+  padding: 20px; /* Add padding around your images if needed */
+  background-color: #f8f9fa; /* Adjust the background color if your images have transparent areas */
+  height: 180px; /* Fixed height for consistency */
+  object-fit: contain; /* This will make sure the image is scaled properly within the container */
+}
+.skills-section .card-body {
+  padding: 15px;
+}
+.skills-section .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
+.skills-section .btn-outline-primary {
+  color: #007bff;
+  border-color: #007bff;
+}
+.skills-section .btn-outline-primary:hover {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Additional CSS for Contact Section */
+.contact-section {
+  padding: 50px 0;
+}
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+.contact-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.social-icon {
+  width: 50px; /* Size of your icons */
+  margin-bottom: 10px;
+}
+/* Hover effect for icons */
+.social-icon:hover {
+  opacity: 0.7;
+}
+/* Style for links in the Contact section */
+.contact-section a {
+  color: #fff;
+  text-decoration: none; /* Removes underline from links */
+  display: inline-block; /* Allows for margin on the bottom */
+  margin-bottom: 10px;
+}
+.contact-section a:hover {
+  color: #ddd; /* Color when hovering over the link */
+}
+
+/* CSS for Sticky Navbar */
+.navbar {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a shadow for depth */
+}
+
+/* Ensure padding is added to body to avoid content being hidden behind the navbar */
+body { 
+  padding-top: 56px; /* Adjust this value based on the height of your navbar */
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Style for navigation bar links */
+.navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa; /* Slightly lighter white when hovering over links */
+}
+
+/* Media query for responsive navbar collapsing */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #343a40; /* Same as navbar color for seamless look */
+  }
+}
+
+.about-section {
+  padding: 50px 0;
+  background-color: #f7f7f7;
+}
+
+.about-section h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about-section img {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+}
+
+.about-section .lead {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.about-section p {
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    text-align: center;
+  }
+  .about-section img {
+    margin: 0 auto;
+  }
+  .about-section .text-md-left {
+    text-align: center !important;
+  }
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #2c3e50;
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    background-color: #34495e;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+a {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+</style>
+
+</head>
+<body>
+
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <img src="images/about/1.jpg" alt="About Me" class="img-fluid rounded-circle mb-4">
+        </div>
+        <div class="col-md-8">
+          <h1 class="text-center text-md-left">Imalsha Sewwandi</h1>
+          <p class="lead">
+            Hello! I'm Imalsha Sewwandi, a passionate and dedicated data analyst with a keen eye for detail and a love for uncovering insights hidden within complex datasets. With a solid background in data analysis, statistical modeling, and data visualization, I thrive on transforming raw data into meaningful and actionable information. I have a Bachelor's degree in Computer Science and 3 years of experience in the field, but I am still exploring the data world and have a long way to go.
+          </p>
+          <p>
+            I am interested in building up my career as a successful data scientist. In this portfolio, I have shared my research, projects, and blog posts about Data Science. When I'm not diving into data, you can find me playing the guitar and singing or baking cakes. I believe in the power of data to tell compelling stories and am excited to share my journey and projects with you.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section bg-light" id="projects">
+  <div class="container">
+    <h2 class="text-center">Projects</h2>
+    <div class="row">
+      <!-- Project 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/stress.jpg" class="card-img-top" alt="Project 1">
+          <div class="card-body">
+            <h5 class="card-title">What are the factors cause Stress and anxiety in the society </h5>
+            <p class="card-text">This project aims to identify and analyze the most significant factors contributing to stress and anxiety in society, with a focus on specific age groups. Primary data collected via surveys , the project provides a comprehensive understanding of the stressors affecting different demographics. 
+              The primary objective is to identify the key stress factors that cause stress and anxiety and provide actionable recommendations to mitigate these stressors.The project includes dashboards and presentations as well.
+            </p>
+            <a href="https://thedatasciencebuddy.blogspot.com/2024/07/factors-that-cause-stress-and-anxiety.html" class="btn btn-primary" target="_blank">Blog Post</a>
+            <a href="https://github.com/Imalsha95/Stress-and-Anxiety-factors-Project" class="btn btn-secondary" target="_blank">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/turbo.jpg" class="card-img-top" alt="Project 2">
+          <div class="card-body">
+            <h5 class="card-title">Predicting Maintenance for manufacturing</h5>
+            <p class="card-text">This project focuses on predicting the Remaining Useful Life (RUL) of machinery using sensor data. 
+              Utilizing the NASA CMAPS dataset,the project involves comprehensive data preprocessing,feature engineering, and model building. 
+              Various regression models,including Random Forest and Gradient Boosting,were trained and evaluated. 
+              Hyperparameter tuning using RandomizedSearchCV was employed to optimize the model performance.
+              This showcases my ability to handle real-world predictive maintenance tasks. 
+            </p>
+            <a href="https://thedatasciencebuddy.blogspot.com/2024/07/predictive-maintenance-for.html" class="btn btn-primary" target="_blank">Blog Post</a>
+            <a href="https://github.com/Imalsha95/Predicting-maintenance-for-manufacturing" class="btn btn-secondary" target="_blank">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/toys_dashboard.png" class="card-img-top" alt="Project 3">
+          <div class="card-body">
+            <h5 class="card-title">Toys Company Sales Dashboard</h5>
+            <p class="card-text">
+              This project involved creating a dynamic,interactive dashboard for a toys company using Power BI.The dashboard tracks key performance indicators such as sales performance, 
+              inventory levels, customer feedback, and financial metrics. 
+              By leveraging real-time data and advanced visualizations, the project provides insights to drive data-driven decisions and optimize business operations. 
+              The primary objective is to enhance product quality, improve financial planning, and identify market trends for strategic growth.
+            </p>
+            <a href="https://thedatasciencebuddy.blogspot.com/2024/07/building-comprehensive-dashboard-for.html" class="btn btn-primary" target="_blank">Blog Post</a>
+            <a href="https://github.com/Imalsha95/Toys-Company-PowerBI-Dashboard" class="btn btn-secondary" target="_blank">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section bg-white" id="skills">
+  <div class="container">
+    <h2 class="text-center">Skills</h2>
+    <div class="row">
+      <!-- Skill 1 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/1.png" class="card-img-top" alt="Python">
+          <div class="card-body">
+            <h5 class="card-title">Python</h5>
+            <p class="card-text">Python is my go-to programming language for data analysis and manipulation. 
+              With its extensive libraries such as Pandas, NumPy, and SciPy, I can efficiently handle and analyze large datasets. 
+              I have experience in writing python scripts for data cleaning, transformation, and automation of repetitive tasks as well as for machine learning and model development. 
+            </p>
+            <a href="https://coursera.org/share/2678aa7f3a638fe5fd9c83c99ab247d9" class="btn btn-outline-primary" target="_blank">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div>
+      <!-- Skill 2 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/2.png" class="card-img-top" alt="Data Visualization">
+          <div class="card-body">
+            <h5 class="card-title">Data Visualization</h5>
+            <p class="card-text">
+              Data Visualization is a crucial part of my data analysis process. I excel at transforming raw data into visually appealing and informative charts, graphs, and dashboards. With tools like Tableau, Power BI, and Python visualization libraries, I create visualizations that highlight key trends, patterns, and outliers, making complex data more accessible and understandable for stakeholders. 
+             </p>
+            <a href="https://coursera.org/share/47cae641039182c3edfa62fccf692d03" class="btn btn-outline-primary" target="_blank">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div>
+      <!-- Skill 3 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/3.png" class="card-img-top" alt="SQL">
+          <div class="card-body">
+            <h5 class="card-title">SQL</h5>
+            <p class="card-text">
+              SQL is a fundamental skill I use daily for managing and querying relational databases. 
+              I am proficient in writing optimized SQL queries to extract, filter, and aggregate data from multiple tables. 
+              I enjoy writing SQL queries and testing different approaches to manipulate data which 
+              includes creating and managing database schemas and ensuring data integrity.
+            </p>
+            <a href="https://coursera.org/share/2678aa7f3a638fe5fd9c83c99ab247d9" class="btn btn-outline-primary" target="_blank">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div>
+      <!-- Skill 4 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+          <img src="images/skills/4.png" class="card-img-top" alt="Data Storytelling">
+          <div class="card-body">
+            <h5 class="card-title">Data Storytelling</h5>
+            <p class="card-text">
+              I believe that data is most powerful when it tells a compelling story.
+              By combining clear visualizations with concise and impactful commentary, I ensure that the story behind the data is communicated effectively to diverse audiences. 
+              My goal is to drive action and influence decisions by making data relatable and engaging, highlighting not just what the data shows, but why it matters.
+            </p>
+            <a href="https://coursera.org/share/2678aa7f3a638fe5fd9c83c99ab247d9" class="btn btn-outline-primary" target="_blank">Link to course or bootcamp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="certifications-section">
+  <div class="container">
+    <h2 class="text-center">Certifications</h2>
+    <div class="row">
+      <!-- Certification 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Google Data Analytics Professional Certificate</h5>
+            <p class="card-text">Issued by Google on Coursera</p>
+            <p class="card-text">An extensive course that covers data cleaning, visualization, and analysis using various tools including spreadsheets, SQL, and R.</p>
+            <a href="https://coursera.org/share/2678aa7f3a638fe5fd9c83c99ab247d9" class="btn btn-outline-primary" target="_blank">Link to the certification</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Certification 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">IBM Data Science Professional Certificate</h5>
+            <p class="card-text">Issued by IBM on Coursera</p>
+            <p class="card-text">A comprehensive program that includes Python for Data Science, Data Analysis, and Visualization, Databases, SQL, and Data Science Methodology.</p>
+            <a href="https://coursera.org/share/47cae641039182c3edfa62fccf692d03" class="btn btn-outline-primary" target="_blank">Link to the certification</a>
+          </div>
+        </div>
+      </div>
+      <!-- Certification 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Microsoft Certified: Data Analyst Associate</h5>
+            <p class="card-text">Issued by Microsoft</p>
+            <p class="card-text">Certification demonstrating proficiency in Power BI, data preparation, data modeling, and data visualization to enable actionable insights.</p>
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/ImalshaSewwandi-8079/3E3FA4E3C8610171?sharingId=B1FEB9BD71203BF3" class="btn btn-outline-primary" target="_blank">Link to the certification</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Me Section -->
+<section id="contact" class="contact-section text-center text-white bg-dark">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <p><i class="fas fa-envelope"></i> imalshasewz@gmail.com</p>
+      </div>
+      <div class="col-lg-6">
+        <p><i class="fas fa-phone"></i> +1(778)xxxxxxx</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://www.linkedin.com/in/imalsha-sewwandi/" target="_blank">
+          <img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
+          LinkedIn
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://twitter.com/yourusername" target="_blank">
+          <img src="icons/twitter.png" alt="Twitter" class="social-icon">
+          Twitter
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://github.com/Imalsha95" target="_blank">
+          <img src="icons/github.png" alt="GitHub" class="social-icon">
+          GitHub
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://medium.com/@yourusername" target="_blank">
+          <img src="icons/medium.png" alt="Medium" class="social-icon">
+          Medium
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://www.youtube.com/channel/UCXVzKCQsotLbu0wMR0_nM6A" target="_blank">
+          <img src="icons/youtube.png" alt="YouTube" class="social-icon">
+          YouTube
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sticky Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Portfolio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#certifications">Certifications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
